@@ -20,6 +20,7 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - script: docker build -t $(dockerId)/$(imageName) .  
     - task: Docker@2
       displayName: Build an image
       inputs:
