@@ -27,3 +27,11 @@ stages:
         docker-compose -f docs/docker-compose.yml --project-directory . -p docs up -d
         docker wait docs_sut_1
         docker-compose -f docs/docker-compose.yml --project-directory . down
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      docker-compose -f docs/docker-compose.yml --project-directory . -p docs up -d
+      docker wait docs_sut_1
+      docker-compose -f docs/docker-compose.yml --project-directory . down
